@@ -8,12 +8,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
-@Getter
-@Setter
 @Entity
 @Table (name = "tb_categorias")
 public class Categorias {
@@ -36,5 +30,37 @@ public class Categorias {
 	//@ManytoOne add qnd for hora hihihi
 	@Size (min = 5, max = 150)
 	private String tipoTemaCategoria;
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDescricaoCategoria() {
+		return descricaoCategoria;
+	}
+
+	public void setDescricaoCategoria(String descricaoCategoria) {
+		this.descricaoCategoria = descricaoCategoria;
+	}
+
+	public String getIconeCategoria() {
+		return iconeCategoria;
+	}
+
+	public void setIconeCategoria(String iconeCategoria) {
+		this.iconeCategoria = iconeCategoria;
+	}
+
+	public String getTipoTemaCategoria() {
+		return tipoTemaCategoria;
+	}
+
+	public void setTipoTemaCategoria(String tipoTemaCategoria) {
+		this.tipoTemaCategoria = tipoTemaCategoria;
+	}
 
 }
