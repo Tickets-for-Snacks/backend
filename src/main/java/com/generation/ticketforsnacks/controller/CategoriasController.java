@@ -41,11 +41,11 @@ public class CategoriasController {
 				.orElse(ResponseEntity.notFound().build());
 	}
 
-	@GetMapping("/categorias/{categorias}")
-	public ResponseEntity<List<Categorias>> getByDescricaoCategorias(@PathVariable String descricaoCategorias) {
-		return ResponseEntity
-				.ok(categoriasRepository.findAllByDescricaoCategoriaContainingIgnoreCase(descricaoCategorias));
-	}
+	@GetMapping("/categorias/{descricaoCategoria}")
+    public ResponseEntity<List<Categorias>> getByDescricaoCategorias(@PathVariable String descricaoCategoria) {
+        return ResponseEntity
+                .ok(categoriasRepository.findAllByDescricaoCategoriaContainingIgnoreCase(descricaoCategoria));
+    }
 
 	@PostMapping
 	public ResponseEntity<Categorias> postCategoria(@Valid @RequestBody Categorias categoria) {
@@ -53,13 +53,14 @@ public class CategoriasController {
 	}
 
 	@PutMapping
-	public ResponseEntity<Categorias> putCategoria(@Valid @RequestBody Categorias categoria) {
-		return categoriasRepository.findById(categoria.getId()).map(resposta -> {
-			return ResponseEntity.ok().body(categoriasRepository.save(categoria));
-		}).orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<Categorias> putCategoria(@Valid @RequestBody Categorias categoria) {
+        if(categoria.getId() == null)
+            return ResponseEntity.badRequest().build();
 
+        return categoriasRepository.findById(categoria.getId()).map(resposta -> {
+            return ResponseEntity.ok().body(categoriasRepository.save(categoria));
+        }).orElse(ResponseEntity.notFound().build());
 	}
-
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> deleteCategorias(@PathVariable Long id) {
 

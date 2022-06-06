@@ -10,7 +10,7 @@ import com.generation.ticketforsnacks.model.Categorias;
 @Repository
 public interface CategoriasRepository extends JpaRepository<Categorias, Long>
 {
-  public List <Categorias> findAllByDescricaoCategoriaContainingIgnoreCase (@Param ("descricaoCategoria") String descricaoCategoria);
+	public List <Categorias> findAllByDescricaoCategoriaContainingIgnoreCase (@Param ("descricaocategoria") String descricaoCategoria);
 
 	
 }
