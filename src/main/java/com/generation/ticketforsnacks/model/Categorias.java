@@ -67,15 +67,17 @@ public class Categorias {
 		this.iconeCategoria = iconeCategoria;
 	}
 
-	public List<Produtos> getProduto()
+	public List<Produtos> getProdutos()
 	{
 		return produtos;
 	}
 
-	public void setProduto(List<Produtos> produto)
+	public void setProdutos(List<Produtos> produtos)
 	{
-		this.produtos = produto;
+		this.produtos = produtos;
 	}
+
+	
 
 	
 

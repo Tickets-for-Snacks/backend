@@ -1,7 +1,7 @@
 package com.generation.ticketforsnacks.model;
 
 import java.math.BigDecimal;
-import java.sql.Date;
+import java.time.LocalDate;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -38,9 +38,8 @@ public class Produtos
 	@Size (max = 1000, message = "Caro snacker. É necessário ter uma descrição.")
 	private String descricaoTicket;
 	
-	@NotBlank (message = "Caro snacker. É necessário ser preenchido.")
 	@JsonFormat(pattern = "yyyy-MM-dd")
-	private Date dataHoraTicket;
+	private LocalDate dataHoraTicket;
 	
 	private String foto;
 	
@@ -92,12 +91,12 @@ public class Produtos
 		this.descricaoTicket = descricaoTicket;
 	}
 
-	public Date getDataHoraTicket()
+	public LocalDate getDataHoraTicket()
 	{
 		return dataHoraTicket;
 	}
 
-	public void setDataHoraTicket(Date dataHoraTicket)
+	public void setDataHoraTicket(LocalDate dataHoraTicket)
 	{
 		this.dataHoraTicket = dataHoraTicket;
 	}
@@ -112,25 +111,27 @@ public class Produtos
 		this.foto = foto;
 	}
 
-	public Categorias getCategoria()
+	public Categorias getCategorias()
 	{
 		return categorias;
 	}
 
-	public void setCategoria(Categorias categoria)
+	public void setCategorias(Categorias categorias)
 	{
-		this.categorias = categoria;
+		this.categorias = categorias;
 	}
 
-	public Usuarios getUsuario()
+	public Usuarios getUsuarios()
 	{
 		return usuarios;
 	}
 
-	public void setUsuario(Usuarios usuario)
+	public void setUsuarios(Usuarios usuarios)
 	{
-		this.usuarios = usuario;
+		this.usuarios = usuarios;
 	}
+
+
 	
 	
 }
