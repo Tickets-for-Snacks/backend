@@ -8,12 +8,6 @@ import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import lombok.Getter;
-import lombok.Setter;
-
-
-@Getter
-@Setter
 @Entity
 @Table (name = "tb_categorias")
 public class Categorias {
@@ -40,6 +34,7 @@ public class Categorias {
 	public Long getId() {
 		return id;
 	}
+<<<<<<< HEAD
 	
 	public void setId(Long id) {
 		this.id = id;
@@ -50,3 +45,35 @@ public class Categorias {
 	
 
 
+=======
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getDescricaoCategoria() {
+		return descricaoCategoria;
+	}
+
+	public void setDescricaoCategoria(String descricaoCategoria) {
+		this.descricaoCategoria = descricaoCategoria;
+	}
+
+	public String getIconeCategoria() {
+		return iconeCategoria;
+	}
+
+	public void setIconeCategoria(String iconeCategoria) {
+		this.iconeCategoria = iconeCategoria;
+	}
+
+	public String getTipoTemaCategoria() {
+		return tipoTemaCategoria;
+	}
+
+	public void setTipoTemaCategoria(String tipoTemaCategoria) {
+		this.tipoTemaCategoria = tipoTemaCategoria;
+	}
+
+}
+>>>>>>> 131000f453fa5b49757cf6f4c733c30f23b83085
