@@ -14,6 +14,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 
@@ -37,6 +38,8 @@ public class Produtos
 	@Size (max = 1000, message = "Caro snacker. É necessário ter uma descrição.")
 	private String descricaoTicket;
 	
+	@NotBlank (message = "Caro snacker. É necessário ser preenchido.")
+	@JsonFormat(pattern = "yyyy-MM-dd")
 	private Date dataHoraTicket;
 	
 	private String foto;

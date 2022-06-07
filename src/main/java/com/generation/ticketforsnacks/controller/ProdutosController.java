@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.generation.ticketforsnacks.model.Produtos;
+import com.generation.ticketforsnacks.repository.CategoriasRepository;
 import com.generation.ticketforsnacks.repository.ProdutoRepository;
 
 @RestController
@@ -27,8 +28,13 @@ import com.generation.ticketforsnacks.repository.ProdutoRepository;
 
 
 public class ProdutosController {
+	
 	@Autowired 
 	private ProdutoRepository produtoRepository;
+	
+	@Autowired 
+	private CategoriasRepository categoriaRepository;
+	
 	@GetMapping
     public ResponseEntity<List<Produtos>> getAll(){
 		return ResponseEntity.ok(produtoRepository.findAll());	}
@@ -52,9 +58,14 @@ public class ProdutosController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Produtos>putProdutos(@RequestBody Produtos produtos){
-		return ResponseEntity.status(HttpStatus.OK).body(produtoRepository.save(produtos));
-		
+	public ResponseEntity<Produtos>putProdutos(@Valid @RequestBody Produtos produtos){		
+		if(!categoriaRepository.existsById(produtos.getCategoria().getId()) || produtos.getId() == null || 
+				produtos.getCategoria().getId() == null)
+			return ResponseEntity.badRequest().build();
+
+        return produtoRepository.findById(produtos.getId()).map(resposta -> {
+            return ResponseEntity.ok().body(produtoRepository.save(produtos));
+        }).orElse(ResponseEntity.notFound().build());
 	}
 	
 	@DeleteMapping("/{id}")
