@@ -1,5 +1,15 @@
 package com.generation.ticketforsnacks.repository;
+import java.util.List;
 
-public interface CategoriasRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.query.Param;
+import org.springframework.stereotype.Repository;
+
+import com.generation.ticketforsnacks.model.Categorias;
+
+@Repository
+public interface CategoriasRepository extends JpaRepository<Categorias, Long>
+{
+  public List <Categorias> findAllByDescricaoCategoriaContainingIgnoreCase (@Param ("descricaoCategoria") String descricaoCategoria);
 
 }
