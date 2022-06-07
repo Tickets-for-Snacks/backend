@@ -9,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Digits;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -29,7 +30,7 @@ public class Produtos
 	private String nomeTicket;
 	
 	@NotNull
-	@Size (min = 1, max = 1000)
+	@Digits(integer = 4, fraction = 2, message = "aceita no maximo 4 casa de numero antes do ponto e duas casas apos o ponto")
 	private BigDecimal valorTicket;
 	
 	@NotBlank 
