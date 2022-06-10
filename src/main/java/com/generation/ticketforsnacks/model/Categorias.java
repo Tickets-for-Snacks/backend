@@ -41,23 +41,11 @@ public class Categorias {
 	{
 		return id;
 	}
-<<<<<<< HEAD
 	
 	public void setId(Long id) {
 		this.id = id;
 	}
 	
-	}
-
-	
-
-
-=======
-
-	public void setId(Long id)
-	{
-		this.id = id;
-	}
 
 	public String getDescricaoCategoria()
 	{
@@ -93,4 +81,4 @@ public class Categorias {
 
 	
 }
->>>>>>> 131000f453fa5b49757cf6f4c733c30f23b83085
+
