@@ -1,4 +1,4 @@
-package com.generation.ticketsforsnacks.seguranca;
+package com.generation.ticketforsnacks.seguranca;
 
 import java.util.Collection;
 import java.util.List;

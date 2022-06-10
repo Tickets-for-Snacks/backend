@@ -1,4 +1,4 @@
-package com.generation.ticketsforsnacks.seguranca;
+package com.generation.ticketforsnacks.seguranca;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;

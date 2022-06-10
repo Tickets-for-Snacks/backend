@@ -1,4 +1,4 @@
-package com.generation.ticketsforsnacks.service;
+package com.generation.ticketforsnacks.service;
 
 import java.nio.charset.Charset;
 import java.util.Optional;

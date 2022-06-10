@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.generation.ticketforsnacks.model.UsuarioLogin;
 import com.generation.ticketforsnacks.model.Usuarios;
 import com.generation.ticketforsnacks.repository.UsuarioRepository;
-import com.generation.ticketsforsnacks.service.UsuarioService;
+import com.generation.ticketforsnacks.service.UsuarioService;
 
 
 @RestController
