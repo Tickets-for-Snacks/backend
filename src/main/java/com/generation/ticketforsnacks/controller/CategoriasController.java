@@ -24,7 +24,7 @@ import com.generation.ticketforsnacks.repository.CategoriasRepository;
 @RequestMapping("/categorias")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class CategoriasController {
-
+	
 	@Autowired
 	private CategoriasRepository categoriasRepository;
 
