@@ -11,9 +11,12 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+import io.swagger.v3.oas.annotations.media.Schema;
 
 @Entity
 @Table (name = "tb_usuarios")
@@ -27,8 +30,9 @@ public class Usuarios
 	
 	//not blank- não pode não escrever nada
 	//not null- tem que ter alguma coisa, por exemplo um espaço 
-	@NotBlank (message = "Caro snacker. É necessário ser preenchido.")
-	@Email 
+	@Schema(example = "email@email.com.br")
+	@NotNull(message = "O atributo Usuário é Obrigatório!")
+	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
 	
 	@NotBlank 
