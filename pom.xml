@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.generation</groupId>
-	<artifactId>ticketforsnacks-2</artifactId>
+	<artifactId>ticketsforsnacks</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>ticketforsnacks-2</name>
+	<name>ticketsforsnacks</name>
 	<description>Projeto Ticket for Snacks</description>
 	<properties>
 		<java.version>17</java.version>
