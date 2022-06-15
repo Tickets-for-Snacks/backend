@@ -1,10 +1,10 @@
-package com.generation.ticketforsnacks2;
+package com.generation.ticketforsnacks;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class Ticketforsnacks2ApplicationTests {
+class TicketforsnacksApplicationTests {
 
 	@Test
 	void contextLoads() {
