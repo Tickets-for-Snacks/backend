@@ -35,8 +35,7 @@ public class Usuarios
 	@Email(message = "O atributo Usuário deve ser um email válido!")
 	private String usuario;
 	
-	@NotBlank 
-	@Size (min = 5, max = 1000)
+	@NotBlank
 	private String nome;
 	
 	@NotBlank 
