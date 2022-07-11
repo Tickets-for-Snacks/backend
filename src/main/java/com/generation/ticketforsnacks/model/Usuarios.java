@@ -51,6 +51,22 @@ public class Usuarios
 	@JsonIgnoreProperties("usuarios")
 	@OneToMany(mappedBy = "usuarios", cascade = CascadeType.REMOVE)
 	private List<Produtos> produtos;
+	
+	// Primeiro método Construtor
+
+		public Usuarios(Long id, String nome, String usuario, String senha, String foto, String tipo)
+		{
+			this.id = id;
+			this.nome = nome;
+			this.usuario = usuario;
+			this.senha = senha;
+			this.foto = foto;
+			this.tipo = tipo;
+		}
+
+		// Segundo método Construtor
+
+		public Usuarios() {	}
 
 	public Long getId()
 	{
