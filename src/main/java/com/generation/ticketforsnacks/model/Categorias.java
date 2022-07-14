@@ -26,11 +26,11 @@ public class Categorias {
 	//not blank- não pode não escrever nada
 	//not null- tem que ter alguma coisa, por exemplo um espaço 
 	@NotBlank (message = "Caro snacker. É necessário ser preenchido.")
-	@Size (min = 5, max = 1000)
+	@Size (min = 3, max = 1000)
 	private String descricaoCategoria;
 	
 	@NotBlank 
-	@Size (min = 5, max = 1000)
+	@Size (max = 1000)
 	private String iconeCategoria;
 	
 	@JsonIgnoreProperties("categorias")
