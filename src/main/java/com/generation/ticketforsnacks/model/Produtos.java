@@ -38,6 +38,7 @@ public class Produtos
 	@Size (max = 1000, message = "Caro snacker. É necessário ter uma descrição.")
 	private String descricaoTicket;
 	
+	@NotNull
 	@JsonFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataHoraTicket;
 	
